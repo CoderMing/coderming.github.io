@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  coderming
+  Archives - coderming
   
   </title>
   
@@ -87,114 +87,34 @@
        
 
  <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
+  $(function(){
+    $('#menu_item_archives').addClass('is_active');
+  });
 </script>
 <div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="15928819115606.html">
+  <div class="large-8 medium-8 columns">
+    <div id="archives-page-wrap">
+        <h1>Archives</h1>
+        <div class="markdown-body archives-wrap">
+          
+             
+                <h1>2020</h1>
+            
+            <div class="article">
+              <a class="clearlink" href="15928819115606.html">
+                <h1>浅析阿里2018秋招前端编程测验题</h1>
+              </a>
+              <div class="read-more clearfix">
+                <span class="date">2020/06/23</span>
                 
-                  <h1>浅析阿里2018秋招前端编程测验题</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">先上题</h3>
+                 
+              </div>
+            </div><!-- article -->
 
-<pre><code class="language-javascript">// 实现一个函数，传入一个promise数组。要求数组中的函数按顺序依次执行，最后函数的返回值是一个由数组元素中各个promise返回值组成的数组
-const timeout = ms =&gt; new Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; {
-        resolve();
-    }, ms);
-});
-
-const ajax1 = () =&gt; timeout(2000).then(() =&gt; {
-    console.log(&#39;1&#39;);
-    return 1;
-});
-
-const ajax2 = () =&gt; timeout(1000).then(() =&gt; {
-    console.log(&#39;2&#39;);
-    return 2;
-});
-
-const ajax3 = () =&gt; timeout(2000).then(() =&gt; {
-    console.log(&#39;3&#39;);
-    return 3;
-});
-
-const mergePromise = ajaxArray =&gt; {
-  // 填写此处的代码
-};
-
-mergePromise([ajax1, ajax2, ajax3]).then(data =&gt; {
-    console.log(&#39;done&#39;);
-    console.log(data); // data 为 [1, 2, 3]
-});
-</code></pre>
-
-<h3 id="toc_1">分析</h3>
-
-<p>可以看到这个题是考我们对于promise的理解，算是较为基础的题。<br/>
-首先我们看到最后函数执行完成后是一个then方法。那么我们就可以知道，<code>mergePromise</code>函数的返回值是一个promise。那么什么东西执行后会返回一个promise呢？无非就两种：一种是promise自身，一种是<code>async function</code>。<br/>
-其次，我们看到传入<code>mergePromise</code>函数的参数，是一个长度不定的数组。处理长度不定的数组的各个元素，无非就是循环或者类循环了。即forEach，for循环这些。<br/>
-根据上面两点，我想到了用<code>async function</code>。</p>
-
-<h3 id="toc_2">本人的解法</h3>
-
-<pre><code class="language-javascript">  return (async function() {
-    let index = 0, length = ajaxArray.length, dataArr = []
-    while(index !== length) {
-      dataArr.push(await ajaxArray[index++]())
-    } 
-    return dataArr
-  })()
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2020/06/23</span>
-                    
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
-
-
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			
-			</p>
-			  </div>
-			</div>
-		</div>
-	</div><!-- large 8 -->
+           
+        </div>
+      </div>
+  </div>
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
