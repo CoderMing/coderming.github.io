@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  浅析阿里2018秋招前端编程测验题 - deming的博客
+  浅析 protobuf 编码解码的实现 - deming的博客
   
   </title>
   
@@ -96,10 +96,10 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>浅析阿里2018秋招前端编程测验题</h1>
+          <h1>浅析 protobuf 编码解码的实现</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2020/06/23</span>
+          <span class="date">2020/09/04</span>
 
           
            
@@ -114,57 +114,7 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <h3 id="toc_0">先上题</h3>
-
-<pre><code class="language-javascript">// 实现一个函数，传入一个promise数组。要求数组中的函数按顺序依次执行，最后函数的返回值是一个由数组元素中各个promise返回值组成的数组
-const timeout = ms =&gt; new Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; {
-        resolve();
-    }, ms);
-});
-
-const ajax1 = () =&gt; timeout(2000).then(() =&gt; {
-    console.log(&#39;1&#39;);
-    return 1;
-});
-
-const ajax2 = () =&gt; timeout(1000).then(() =&gt; {
-    console.log(&#39;2&#39;);
-    return 2;
-});
-
-const ajax3 = () =&gt; timeout(2000).then(() =&gt; {
-    console.log(&#39;3&#39;);
-    return 3;
-});
-
-const mergePromise = ajaxArray =&gt; {
-  // 填写此处的代码
-};
-
-mergePromise([ajax1, ajax2, ajax3]).then(data =&gt; {
-    console.log(&#39;done&#39;);
-    console.log(data); // data 为 [1, 2, 3]
-});
-</code></pre>
-
-<h3 id="toc_1">分析</h3>
-
-<p>可以看到这个题是考我们对于promise的理解，算是较为基础的题。<br/>
-首先我们看到最后函数执行完成后是一个then方法。那么我们就可以知道，<code>mergePromise</code>函数的返回值是一个promise。那么什么东西执行后会返回一个promise呢？无非就两种：一种是promise自身，一种是<code>async function</code>。<br/>
-其次，我们看到传入<code>mergePromise</code>函数的参数，是一个长度不定的数组。处理长度不定的数组的各个元素，无非就是循环或者类循环了。即forEach，for循环这些。<br/>
-根据上面两点，我想到了用<code>async function</code>。</p>
-
-<h3 id="toc_2">本人的解法</h3>
-
-<pre><code class="language-javascript">  return (async function() {
-    let index = 0, length = ajaxArray.length, dataArr = []
-    while(index !== length) {
-      dataArr.push(await ajaxArray[index++]())
-    } 
-    return dataArr
-  })()
-</code></pre>
+      <p>xxx</p>
 
 
     
@@ -175,13 +125,13 @@ mergePromise([ajax1, ajax2, ajax3]).then(data =&gt; {
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15929046514995.html" 
-          title="Previous Post: Timing Attack的原理和实用库 cryptiles">&laquo; Timing Attack的原理和实用库 cryptiles</a>
-      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="15929046514995.html" 
+          title="Next Post: Timing Attack的原理和实用库 cryptiles">Timing Attack的原理和实用库 cryptiles &raquo;</a>
       
       </p>
         </div>
@@ -302,8 +252,6 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
 
 
 
-
-<script src="asset/prism.js"></script>
 
 
 <style type="text/css">
