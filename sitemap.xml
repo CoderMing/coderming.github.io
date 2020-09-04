@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>coderming.github.io/</loc>
-  <lastmod>2020-09-04T12:06:12+08:00</lastmod>
+  <lastmod>2020-09-04T13:04:06+08:00</lastmod>
 </url>
 
 <url>
@@ -21,6 +21,19 @@
 </url>
 
 
+<url>
+  <loc>coderming.github.io/about.html</loc>
+  <lastmod>2020-09-04T12:34:40+08:00</lastmod>
+</url>
+
+
+<url>
+  <loc>coderming.github.io/tech.html</loc>
+</url>
+
+<url>
+  <loc>coderming.github.io/school.html</loc>
+</url>
 
 
 </urlset>

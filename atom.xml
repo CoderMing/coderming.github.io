@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[deming的博客]]></title>
+  <title><![CDATA[M's BLOG]]></title>
   <link href="coderming.github.io/atom.xml" rel="self"/>
   <link href="coderming.github.io/"/>
-  <updated>2020-09-04T12:06:06+08:00</updated>
+  <updated>2020-09-04T13:04:01+08:00</updated>
   <id>coderming.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
